@@ -28,7 +28,7 @@ public class YoutubeChannel {
     }
 
     public Flux<Video> getAllVideos(int number){
-        return Flux.fromIterable(videos);
+        return Flux.fromIterable(videos).log().take(2, true);
     }
 
     public Flux<Integer> getAllVideosDescriptionSize(){

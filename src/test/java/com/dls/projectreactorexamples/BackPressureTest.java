@@ -2,9 +2,11 @@ package com.dls.projectreactorexamples;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.FluxSink;
 import reactor.core.scheduler.Schedulers;
 
 import java.time.Duration;
+import java.util.Properties;
 
 public class BackPressureTest {
 
@@ -98,33 +100,32 @@ public class BackPressureTest {
     }
 
     @Test
-    public void testBackPressureFluxCreate() throws InterruptedException {
-
-  /*      Properties properties = new Properties();
-        properties.setProperty("reactor.bufferSize.small", "16");
-        System.setProperties(properties);
-        //nao funciona no default do create, que é buffer, esse exemplo nao sera mostrado, somente o seguir
-        */
+    public void createOperatorBackPressureStrategies() throws InterruptedException {
+        System.setProperty("reactor.bufferSize.small", "16");
 
         Flux<Object> fluxTest = Flux.create(emitter -> {
-            for (int i = 0; i < 50; i++) {
-                System.out.println(Thread.currentThread().getName() + " | Publishing = " + i);
+            for(int i = 0; i < 10_00000; i++){
                 emitter.next(i);
             }
             emitter.complete();
-        });
+        }, FluxSink.OverflowStrategy.LATEST);
+
 
         fluxTest
                 .publishOn(Schedulers.boundedElastic())
-                .doOnError(System.out::println)
-                .subscribe(i -> {
+                .map(number -> {
                     try {
-                        System.out.println(Thread.currentThread().getName() + " | Received = " + i);
-                        Thread.sleep(30);
+                        Thread.sleep(1);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }});
-        Thread.sleep(100000);
+                        throw new RuntimeException(e);
+                    }
+                    System.out.println(Thread.currentThread().getName()+ " Consumindo numero "+number);
+                    return number;
+                })
+                .subscribe();
+
+        Thread.sleep(10_00000);
     }
+
 
 }

@@ -32,6 +32,7 @@ public class OperatorsTest {
 
         youtubeChannel
                 .getAllVideos(2)
+                .log("second take")
                 .subscribe(video -> System.out.println(video.getName()));
     }
 

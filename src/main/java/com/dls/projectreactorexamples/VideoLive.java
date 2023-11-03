@@ -53,7 +53,4 @@ public class VideoLive {
                 return "⌛️ Em andamento...";
         }
     }
-
-
-
 }

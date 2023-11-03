@@ -34,11 +34,4 @@ public class VideoAnalyser {
         return Mono.fromCallable(() -> analyseBlocking(video))
                 .publishOn(Schedulers.boundedElastic());
     }
-
-
-
-
-
-
-
 }
