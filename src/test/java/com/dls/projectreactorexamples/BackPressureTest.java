@@ -25,7 +25,7 @@ public class BackPressureTest {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    System.out.println(Thread.currentThread().getName()+ " Consumindo numero "+number);
+                    System.out.println(Thread.currentThread().getName()+ " Consuming number "+number);
                     return number;
                 })
                 .subscribe();
@@ -47,7 +47,7 @@ public class BackPressureTest {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    System.out.println(Thread.currentThread().getName()+ " Consumindo numero "+number);
+                    System.out.println(Thread.currentThread().getName()+ " Consuming number "+number);
                     return number;
                 })
                 .subscribe();
@@ -69,7 +69,7 @@ public class BackPressureTest {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    System.out.println(Thread.currentThread().getName()+ " Consumindo numero "+number);
+                    System.out.println(Thread.currentThread().getName()+ " Consuming number "+number);
                     return number;
                 })
                 .subscribe();
@@ -91,7 +91,7 @@ public class BackPressureTest {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    System.out.println(Thread.currentThread().getName()+ " Consumindo numero "+number);
+                    System.out.println(Thread.currentThread().getName()+ " Consuming number "+number);
                     return number;
                 })
                 .subscribe();
@@ -119,7 +119,7 @@ public class BackPressureTest {
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
-                    System.out.println(Thread.currentThread().getName()+ " Consumindo numero "+number);
+                    System.out.println(Thread.currentThread().getName()+ " Consuming number "+number);
                     return number;
                 })
                 .subscribe();

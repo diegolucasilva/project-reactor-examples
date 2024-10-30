@@ -14,21 +14,21 @@ public class VideoLive {
     public Flux<String> play(){
         return Flux.interval(Duration.ofMillis(500))
                 .map(value -> getLiveEvent(value))
-                .takeWhile(event -> !event.equals("Fim"))
+                .takeWhile(event -> !event.equals("End"))
                 .publish().autoConnect();
     }
 
     public Flux<String> playN() {
         return Flux.interval(Duration.ofMillis(500))
                 .map(value -> getLiveEvent(value))
-                .takeWhile(event -> !event.equals("Fim"))
+                .takeWhile(event -> !event.equals("End"))
                 .publish().autoConnect(2);
     }
 
     public Flux<String> playResubscription() {
         return Flux.interval(Duration.ofMillis(500))
                 .map(value -> getLiveEvent(value))
-                .takeWhile(event -> !event.equals("Fim"))
+                .takeWhile(event -> !event.equals("End"))
                 .share();
     }
 
@@ -36,21 +36,21 @@ public class VideoLive {
     private String getLiveEvent(Long sequence){
         switch (sequence.intValue()) {
             case 0:
-                return "🟢 Início da live";
+                return "🟢 Live stream starts";
             case 1:
-                return "⚡️ Novo recurso anunciado!...";
+                return "⚡️ New feature announced!...";
             case 2:
-                return "💬 Bate-papo ao vivo...";
+                return "💬 Live chat...";
             case 3:
-                return "🎉 Sorteio de brindes...";
+                return "🎉 Giveaways...";
             case 4:
-                return "⏰ Próximo evento anunciado!...";
+                return "⏰ Next event announced!...";
             case 7:
-                return "⏰ Nossa Live chegou ao fim!";
+                return "⏰ Our Live stream has come to an end!";
             case 8:
-                return "Fim";
+                return "End";
             default:
-                return "⌛️ Em andamento...";
+                return "⌛️ In progress...";
         }
     }
 }

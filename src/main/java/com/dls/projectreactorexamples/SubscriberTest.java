@@ -19,7 +19,7 @@ public class SubscriberTest {
         publisher.getAllVideos().log().subscribe(
                 video -> System.out.println(video.getName()),
                 throwable -> System.out.println(throwable),
-                () -> System.out.println("Dados consumidos com sucesso")
+                () -> System.out.println("Data consumed successfully")
                 );
 
 

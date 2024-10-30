@@ -31,7 +31,7 @@ public class SchedulersTest {
                 });
 
         for (int i = 0; i < 2; i++) {
-            System.out.println("Execucao " + i);
+            System.out.println("Execution " + i);
             videos.subscribe(description -> System.out.println(description));
         }
         Thread.sleep(20_000);
@@ -62,7 +62,7 @@ public class SchedulersTest {
                 });
     //    videos.subscribe(description -> System.out.println(description));
         for (int i = 0; i < 20; i++) {
-            System.out.println("Execucao " + i);
+            System.out.println("Execution " + i);
             videos.subscribe(description -> System.out.println(description));
         }
         Thread.sleep(20_000);

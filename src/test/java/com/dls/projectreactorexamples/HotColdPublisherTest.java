@@ -24,15 +24,15 @@ public class HotColdPublisherTest {
 
         Flux<String> java21Live = videoLive.play();
 
-        java21Live.subscribe(value -> System.out.println("Usuario 1 "+value));
+        java21Live.subscribe(value -> System.out.println("User 1 "+value));
 
         Thread.sleep(2000);
 
-        java21Live.subscribe(value -> System.out.println("Usuario 2 "+ value));
+        java21Live.subscribe(value -> System.out.println("User 2 "+ value));
 
         Thread.sleep(4000);
 
-        java21Live.subscribe(value -> System.out.println("Usuario 3 "+ value));
+        java21Live.subscribe(value -> System.out.println("User 3 "+ value));
 
         Thread.sleep(20_0000);
     }
@@ -45,15 +45,15 @@ public class HotColdPublisherTest {
 
         Thread.sleep(2000);
 
-        java21Live.subscribe(value -> System.out.println("Usuario 1 "+value));
+        java21Live.subscribe(value -> System.out.println("User 1 "+value));
 
         Thread.sleep(2000);
 
-        java21Live.subscribe(value -> System.out.println("Usuario 2 "+ value));
+        java21Live.subscribe(value -> System.out.println("User 2 "+ value));
 
         Thread.sleep(4000);
 
-        java21Live.subscribe(value -> System.out.println("Usuario 3 "+ value));
+        java21Live.subscribe(value -> System.out.println("User 3 "+ value));
 
         Thread.sleep(20_0000);
     }
@@ -67,15 +67,15 @@ public class HotColdPublisherTest {
 
         Thread.sleep(2000);
 
-        java21Live.subscribe(value -> System.out.println("Usuario 1 "+value));
+        java21Live.subscribe(value -> System.out.println("User 1 "+value));
 
         Thread.sleep(2000);
 
-        java21Live.subscribe(value -> System.out.println("Usuario 2 "+ value));
+        java21Live.subscribe(value -> System.out.println("User 2 "+ value));
 
         Thread.sleep(4000);
 
-        java21Live.subscribe(value -> System.out.println("Usuario 3 "+ value));
+        java21Live.subscribe(value -> System.out.println("User 3 "+ value));
 
         Thread.sleep(20_0000);
     }
